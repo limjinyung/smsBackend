@@ -1,6 +1,12 @@
 pipeline {
     agent none
     stages {
+        stage('Basic Information') {
+            steps{
+                sh "echo some basic informations"
+            }
+        }
+
         stage('Build') {
             agent {
                 docker {
