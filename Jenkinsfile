@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps{
-                sh 'virtualenv env && source env/bin/activate && pip install --upgrade -r requirements.txt'
+                sh 'python -m py_compile helloworld/manage.py'
             }
         }
     }
