@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps{
-                sh 'python -m manage.py'
+                sh 'python -m helloworld/manage.py'
             }
         }
     }
