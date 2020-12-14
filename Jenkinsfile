@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps{
-                sh 'python manage.py runserver'
+                sh 'python helloworld/manage.py runserver'
             }
         }
     }
