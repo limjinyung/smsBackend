@@ -8,7 +8,10 @@ pipeline {
                 }
             }
             steps{
-                sh 'python helloworld/manage.py runserver'
+                sh 'python -m venv helloworld'
+                sh '.\Scripts\Activate '
+                sh 'pip install -r requirements.txt'
+                sh 'python manage.py jenkins --enable-coverage'
             }
         }
     }
