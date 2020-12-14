@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps{
-                sh 'python helloworld/manage.py jenkins --enable-coverage'
+                sh 'python -m manage.py'
             }
         }
     }
