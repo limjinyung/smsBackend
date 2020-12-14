@@ -1,9 +1,9 @@
 pipeline {
-    agent none
+    agent any
     stages {
         stage('Basic Information') {
             steps{
-                sh "echo some basic informations"
+                ehco "echo some basic informations"
             }
         }
 
