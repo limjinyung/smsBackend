@@ -1,7 +1,4 @@
 from django.test import TestCase
-from .models import Student, Course
-from django.template.defaultfilters import slugify
-import datetime
 
 # Create your tests here.
 class DumbTestCase(TestCase):
