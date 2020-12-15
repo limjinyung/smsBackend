@@ -10,14 +10,14 @@ class DumbTestCase(TestCase):
         pass
 
 
-class CourseModelTest(TestCase):
-
-    def test_create_new_course(self):
-        course1 = Course.objects.create(name="Advance Data Structure and Algorithms")
-        course2 = Course.objects.create(name="Image Processing")
-
-        course1.save()
-        course2.save()
-        self.assertEqual(course1.name, "Advance Data Structure and Algorithms")
-        self.assertEqual(course2.name, "Image Processing")
+# class CourseModelTest(TestCase):
+#
+#     def test_create_new_course(self):
+#         course1 = Course.objects.create(name="Advance Data Structure and Algorithms")
+#         course2 = Course.objects.create(name="Image Processing")
+#
+#         course1.save()
+#         course2.save()
+#         self.assertEqual(course1.name, "Advance Data Structure and Algorithms")
+#         self.assertEqual(course2.name, "Image Processing")
 
