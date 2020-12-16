@@ -32,8 +32,13 @@ pipeline {
                   }
              }
         }
+        stage('Remove virtual environment'){
+             steps{
+                  sh 'rmvirtualenv venv'
+             }
+        }
 
-        stage('Cleaning up') {
+        stage('Cleaning up docker') {
              steps {
                   sh 'docker rmi $registry:$BUILD_NUMBER'
              }
