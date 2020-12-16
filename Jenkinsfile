@@ -16,6 +16,13 @@ pipeline {
                   sh 'virtualenv venv && . venv/bin/activate && pip install -r requirements.txt && python helloworld/sms/tests.py'
              }
         }
+        stage('Building our image') { 
+            steps { 
+                script { 
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER" 
+                }
+            } 
+        }
         stage('Deploy docker image') {
              steps{
                   script{
