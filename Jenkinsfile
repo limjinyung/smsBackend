@@ -32,11 +32,6 @@ pipeline {
                   }
              }
         }
-        stage('Remove virtual environment'){
-             steps{
-                  sh 'deactivate && rm -rf venv'
-             }
-        }
 
         stage('Cleaning up docker') {
              steps {
