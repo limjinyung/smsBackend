@@ -34,7 +34,7 @@ pipeline {
         }
         stage('Remove virtual environment'){
              steps{
-                  sh 'rmvirtualenv venv'
+                  sh 'deactivate && rm -rf venv'
              }
         }
 
