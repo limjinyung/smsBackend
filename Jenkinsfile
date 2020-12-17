@@ -16,14 +16,14 @@ pipeline {
                   sh 'virtualenv venv && . venv/bin/activate && pip install -r requirements.txt && python helloworld/sms/tests.py'
              }
         }
-        stage('Building our image') { 
+        stage('Build Docker image') { 
             steps { 
                 script { 
                     dockerImage = docker.build registry + ":$BUILD_NUMBER" 
                 }
             } 
         }
-        stage('Deploy docker image') {
+        stage('Deploy Docker image') {
              steps{
                   script{
                        docker.withRegistry('', registryCredential){
@@ -38,6 +38,10 @@ pipeline {
                   sh 'docker rmi $registry:$BUILD_NUMBER'
              }
         }
-
+    }
+    post {
+         always {
+              emailest body: 'Email from Jenkins Pipeline', recipientProviders:[[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+         }
     }
 }
