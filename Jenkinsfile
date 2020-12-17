@@ -41,7 +41,7 @@ pipeline {
     }
     post {
          always {
-              emailest body: 'Email from Jenkins Pipeline', recipientProviders:[[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+              emailext body: 'A Test Email', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
          }
     }
 }
